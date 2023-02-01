@@ -47,6 +47,8 @@
  #form input{
     width: 300px;
     height: 40px;
+    font-size: 20px;
+    font-weight: bold;
  }
   #sumbitBtn {
     padding: 0.2rem;
@@ -66,4 +68,9 @@
   /* dice Image container*/
   #diceWthScore {
     margin: 1.5rem;
+  }
+  #tryAgainImage{
+    margin-top: 90px;
+    width: 500px;
+    padding: 48px;
   }

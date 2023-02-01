@@ -44,7 +44,8 @@ function submitFormInfoFunction() {
  
 // Image 2 Function : Display form info
 function displayFormInfoFunction() {
-    document.getElementById('info').innerText = `Name: ${formInfoArray[0].Name}, User Name: ${formInfoArray[0].UserName}, Email: ${formInfoArray[0].Email}`
+    document.getElementById('info').innerText = `Name: ${formInfoArray[0].Name} 
+User Name: ${formInfoArray[0].UserName}`
     document.getElementById('displayInfo').classList.remove('hidden');
     document.getElementById("img-3").disabled = false;
     document.getElementById("img-2").disabled = true;
