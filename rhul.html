@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prathamesh Karbele F2 Module test 1 Feb</title>
+    <link rel="stylesheet" href="rahul.css">
+</head>
+ 
+<body>
+ 
+    <!-- Images with Flex Box -->
+    <div class="flex-container">
+        <div>
+            <button id="img-1" onclick="openFormFunction()"><img class="img" src="https://t3.ftcdn.net/jpg/02/11/07/58/360_F_211075851_gSKybVNvDWgZnrIaleNsQfIz2mqPKaor.jpg" alt="img1"></button>
+        </div>
+ 
+        <div>
+            <button id="img-2" onclick="displayFormInfoFunction()"><img class="img" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4906724a-fc3e-4778-900d-c54e84926295/d5s31j5-c06e1a27-c3a3-434c-88ab-0fd89ff54e8d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ5MDY3MjRhLWZjM2UtNDc3OC05MDBkLWM1NGU4NDkyNjI5NVwvZDVzMzFqNS1jMDZlMWEyNy1jM2EzLTQzNGMtODhhYi0wZmQ4OWZmNTRlOGQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.pOcLIyi2wEZm_EZl-CgJTjPGjTYk2BQEKZ9VRfLWzBA"
+                   alt="img2"></button>
+        </div>
+ 
+        <div>
+            <button id="img-3" onclick="displayDiceWthScore()"><img class="img" src="https://wallpaperset.com/w/full/6/8/a/35157.jpg" alt="img3"></button>
+        </div>
+ 
+        <div>
+            <button id="img-4" onclick="generateCouponCodeFunction()"><img class="img" src="https://cdn.vectorstock.com/i/preview-1x/55/49/voucher-card-cash-back-template-design-with-coupon-vector-44295549.jpg"
+                   alt="img4"></button>
+        </div>
+    </div>
+ 
+    <!-- Form Group -->
+    <div class="form-Group hidden" id="form">
+        <label for="name">Name: </label>
+        <input type="text" id="name" required> <br><br>
+ 
+        <label for="userName">User Name: </label>
+        <input type="text" id="userName" required> <br><br>
+ 
+        <label for="email">Email: </label>
+        <input type="email" id="email" required><br><br>
+ 
+        <button id="sumbitBtn" type="submit" onclick="submitFormInfoFunction()">Submit</button>
+    </div>
+ 
+    <!-- Display Form info -->
+    <div class="displayformInfo hidden" id="displayInfo">
+        <h2>Your information is</h2><br>
+        <span id="info"></span><br><br>
+        <p>Click on next Image to proceed further</p>
+    </div>
+ 
+    <!-- dice image with score and attempts -->
+    <div class="diceWthScore hidden" id="diceWthScore">
+        <p>Attempts left : <span id="attemptsLeft">0</span></p><br>
+        <div>
+            <button id="dice-Image" onclick="diceClick()"><img class="img" src="dice-png-41772 (1).png"
+                   alt="diceImage"></button><br><br>
+            <p>Remaining Dice Clicks: <span id="diceClicks">3</span></p>
+            <p>Your total score is: <span id="score">0</span></p>
+        </div>
+    </div>
+ 
+    <!-- Congratulations and try again Image -->
+    <div>
+        <img class="hidden" id="congratsImage" src="https://www.shutterstock.com/image-vector/congratulations-banner-spectrum-brush-strokes-260nw-1146099020.jpg" alt="congratsImage">
+    </div>
+    <div>
+        <img class="hidden" id="tryAgainImage" src="https://www.shutterstock.com/image-illustration/better-luck-next-time-text-600w-2060033624.jpg" alt="tryAgainImage">
+    </div>
+    <script src="rahul.js"></script>
+</body>
+ 
+</html>

@@ -1,0 +1,157 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <div id="galleryContainer">
+    <img id="img1" src="https://t3.ftcdn.net/jpg/02/11/07/58/360_F_211075851_gSKybVNvDWgZnrIaleNsQfIz2mqPKaor.jpg" alt="Image 1">
+    <img id="img2" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4906724a-fc3e-4778-900d-c54e84926295/d5s31j5-c06e1a27-c3a3-434c-88ab-0fd89ff54e8d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ5MDY3MjRhLWZjM2UtNDc3OC05MDBkLWM1NGU4NDkyNjI5NVwvZDVzMzFqNS1jMDZlMWEyNy1jM2EzLTQzNGMtODhhYi0wZmQ4OWZmNTRlOGQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.pOcLIyi2wEZm_EZl-CgJTjPGjTYk2BQEKZ9VRfLWzBA" alt="Image 2">
+
+    <img id="img3" src="https://wallpaperset.com/w/full/6/8/a/35157.jpg" alt="Image 3">
+
+
+    <img id="img4" src="https://cdn.vectorstock.com/i/preview-1x/55/49/voucher-card-cash-back-template-design-with-coupon-vector-44295549.jpg" alt="Image 4">
+  </div>
+
+  <div id="formContainer">
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <button type="button" id="registerBtn">Register</button>
+    </form>
+  </div>
+
+  <div id="displayContainer">
+    <p id="displayName"></p>
+    <p id="displayUsername"></p>
+  </div>
+
+  <div id="diceContainer">
+    <div id="dice">
+    </div>
+  </div>
+  <script src="demo.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .formContainer {
+        display: none;
+        background-color: lightgray;
+        padding: 20px;
+        border: 1px solid black;
+      }
+
+      .displayContainer {
+        display: none;
+        background-color: lightgray;
+        padding: 20px;
+        border: 1px solid black;
+      }
+
+      .diceContainer {
+        display: none;
+        background-color: lightgray;
+        padding: 20px;
+        border: 1px solid black;
+      }
+
+      .couponContainer {
+        display: none;
+        background-color: lightgray;
+        padding: 20px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="img1" src="image1.jpg" />
+    <img id="img2" src="image2.jpg" />
+    <img id="img3" src="image3.jpg" />
+    <img id="img4" src="image4.jpg" />
+
+    <div id="formContainer" class="formContainer">
+      <input type="text" id="name" placeholder="Enter your name" />
+      <input type="text" id="username" placeholder="Enter your username" />
+      <button id="registerBtn">Register</button>
+    </div>
+
+    <div id="displayContainer" class="displayContainer">
+      <div id="displayName"></div>
+      <div id="displayUsername"></div>
+    </div>
+
+    <div id="diceContainer" class="diceContainer">
+      <img id="diceImg" src="dice.jpg" />
+      <div id="diceValue"></div>
+    </div>
+
+    <div id="couponContainer" class="couponContainer">
+      <div id="couponValue"></div>
+    </div>
+
+    <script>
+      const img1 = document.getElementById("img1");
+      const formContainer = document.getElementById("formContainer");
+      const registerBtn = document.getElementById("registerBtn");
+      const displayContainer = document.getElementById("displayContainer");
+      let img1Clicked = false;
+
+      img1.addEventListener("click", function() {
+        if (!img1Clicked) {
+          formContainer.style.display = "block";
+          img1Clicked = true;
+        }
+      });
+
+      registerBtn.addEventListener("click", function() {
+        const name = document.getElementById("name").value;
+        const username = document.getElementById("username").value;
+        localStorage.setItem("name", name);
+        localStorage.setItem("username", username);
+        formContainer.style.display = "none";
+      });
+
+      const img2 = document.getElementById("img2");
+      img2.addEventListener("click", function() {
+        displayContainer.style.display = "block";
+        formContainer.style.display = "none";
+        const name = localStorage.getItem("name");
+        const username = localStorage.getItem("username");
+        document.getElementById("displayName").innerHTML = "Name: " + name;
+        document.getElementById("displayUsername").innerHTML =
+          "Username: " + username;
+      });
+
+      const img3 = document.getElementById("img3");
+      const diceContainer = document.getElementById("diceContainer");
+      img3.addEventListener("click", function() {
+        diceContainer.style.display = "block";
+        displayContainer.style.display = "none";
+        const diceValue = Math.floor(Math.random() * 6) + 1;
+        document.getElementById("diceValue").innerHTML = "Dice value: " + diceValue;
+      });
+
+      const img4 = document.getElementById("img4");
+      const couponContainer = document.getElementById("couponContainer");
+      img4.addEventListener("click", function() {
+        couponContainer.style.display = "block";
+        diceContainer.style.display = "none";
+        const couponValue = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("couponValue").innerHTML =
+          "Coupon value: " + couponValue;
+      });
+    </script>
+  </body>
+</html>

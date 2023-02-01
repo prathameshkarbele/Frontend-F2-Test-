@@ -1,0 +1,30 @@
+#galleryContainer {
+  display: flex;
+  justify-content: space-around;
+  
+}
+.flex-container{
+  /* margin-top: 30px; */
+}
+
+#formContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+#galleryContainer img{
+  height: 300px;
+  width: 300px;
+  margin-top: 30px;
+ 
+}
+
+#displayContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
